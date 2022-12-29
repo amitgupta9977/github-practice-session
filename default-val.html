@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profile = {
+    name: "Amit",
+    city: "jabalpur",
+  };
+  const uState = profile.state || "NA";
+
+  console.log("@AG", profile.state, uState);
+  const { state = "Amit", city = "morena" } = profile;
+  console.log("@AG-D:", state, city);
+  const { name: uName } = profile;
+
+  console.log(profile);
+
+  //nexted object destructure
+
+  // const user = {
+  //   name: "shivu",
+  //   place: "pune",
+  //   details: {
+  //     pincode: "482001",
+  //     meta: {
+  //       x: "1",
+  //       y: "2",
+  //     },
+  //   },
+  // };
+  // const { name, place, details = { adress: "NA" } } = user;
+  // const { adress, pincode, meta = {} } = details;
+  // //   const { x, y } = meta;
+  // console.log("@AG LN42:", details, adress);
+
+  //   console.log(name, y);
+
+  //   //alias the objects
+  //   const { name: mName, place: mplace } = user;
+  //   const { name: nName, city: mCity } = profile;
+
+  //   console.log("@LN47", mName, mplace);
+  //   console.log("LN48", nName, mCity);
+
+  let details = {
+    name: "sai",
+    age: "23",
+    address: {
+      city: "hyd",
+      country: "india",
+    },
+  };
+
+  const { name, age, address = { town: "gch" } } = details;
+
+  console.log(town); //gch
+</script>

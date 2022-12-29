@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let profile = {
+    name: "amit",
+    city: "Katni",
+    State: "MP",
+  };
+  console.log(profile.name, profile.city, profile.State);
+
+  let uName = profile.name;
+  let uCity = profile.city;
+  let uState = profile.State;
+
+  console.log(uName, uCity, uState);
+
+  const { name, city, State } = profile;
+
+  console.log(name, city, State);
+</script>

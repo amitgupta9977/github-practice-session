@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // Struture clone
+
+  //   const a = {
+  //     name: "Mitesh",
+  //     city: "Mumbai",
+  //     details: {
+  //       address: "Kalyan",
+  //     },
+  //   };
+
+  //   //   const b = structuredClone(a);
+  //   const b = JSON.parse(JSON.stringify(a));
+
+  //   b.name = "Sai";
+  //   b.details.address = "Thane";
+
+  //   console.log({ a, b });
+
+  //using recursion
+
+  const deepClone = (obj) => {
+    if (obj === null) return null;
+    let a = Object.assign({}, obj);
+    Object.keys(clone).forEach(
+      (key) =>
+        (a[key] = typeof obj[key] === "object" ? deepClone(obj[key]) : obj[key])
+    );
+    if (Array.isArray(obj)) {
+      a.length = obj.length;
+      return Array.from(a);
+    }
+    return a;
+  };
+</script>
