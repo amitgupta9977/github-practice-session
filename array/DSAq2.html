@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function printRLE(str) {
+    let n = str.length;
+    for (let i = 0; i < n; i++) {
+      // Count occurrences of current character
+      let count = 1;
+      while (i < n - 1 && str[i] == str[i + 1]) {
+        count++;
+        i++;
+      }
+
+      // Print character and its count
+      document.write(count);
+      document.write(str[i]);
+    }
+  }
+
+  let str = "wwwwaaadexxxxxxywww";
+  printRLE(str);
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //Algo1
+  //Step1:- Declare the both array
+  //Step2:- Create a function
+  //Step3:- Inside the function declare the blank array or object
+  //Step4:- create 2 loops and check the condition if condition satiesfied than store the value in array object
+  //Step5:- return the A3 array, call the function at the end and console it
+  let A1 = [1, 2, 3, 4, 5, 1];
+  let A2 = [2, 8, 4, 1];
+
+  //   let intersectionArray = () => {
+  //     let A3 = [];
+  //     for (let i = 0; i < A1.length; i++) {
+  //       for (let j = 0; j < A2.length; j++) {
+  //         if (A1[i] === A2[j]) {
+  //           A3.push(A1[i]);
+  //         }
+  //       }
+  //     }
+
+  //     return A3;
+  //   };
+
+  //   console.log(intersectionArray(A1, A2));
+  //Way 2:-
+  //Step 1:-Declare the both array
+  //Create a function and pass the parameters
+  //Step3:- declare the set
+  //Step4:- filter the set A1 and use the has property in A2 and concatinate the both array and return it.
+  //Step5:- Call the function
+
+  function intersect() {
+    var setB = new Set(A2);
+    return [...new Set(A1)].filter((x) => setB.has(x));
+  }
+  console.log(intersect(A1, A2));
+</script>
