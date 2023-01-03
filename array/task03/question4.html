@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   const numbers = [1, 2, 3, 4];
+  //   const k = 5;
+  //   const pair = findPair(numbers, k);
+  //   if (pair) {
+  //     console.log(`Pair found: ${pair}`);
+  //   } else {
+  //     console.log("Pair not found");
+  //   }
+
+  function pairSum(array, sum) {
+    let result = [],
+      return_result = [];
+    for (let i = 0; i < array.length; i++) {
+      if (result[array[i]]) {
+        return_result.push({ [result[array[i]]]: array[i] });
+      } else {
+        result[sum - array[i]] = array[i];
+      }
+    }
+    return return_result;
+  }
+  console.log(pairSum([1, 2, 7, 2, 4, 6, 2], 8));
+</script>
