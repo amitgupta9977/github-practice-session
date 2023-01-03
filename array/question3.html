@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const inputTwo = "Every developer likes to mix kubernetes and javascript";
+  // Output - "E3y d7r l3s to mix k8s and j8t";
+
+  const countNum = (word) =>
+    word[0] + (word.length - 2) + word[word.length - 1];
+
+  const result = inputTwo
+    .split(" ")
+    .map((word) => (word.length >= 4 ? countNum(word) : word))
+    .join(" ");
+  console.log(result);
+</script>

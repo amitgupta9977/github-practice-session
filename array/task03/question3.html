@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const inputThree = [
+    {
+      username: "john",
+      team: "red",
+      score: 5,
+      items: ["ball", "book", "pen"],
+    },
+    {
+      username: "becky",
+      team: "blue",
+      score: 10,
+      items: ["tape", "backpack", "pen"],
+    },
+    {
+      username: "susy",
+      team: "red",
+      score: 55,
+      items: ["ball", "eraser", "pen"],
+    },
+    {
+      username: "tyson",
+      team: "green",
+      score: 1,
+      items: ["book", "pen"],
+    },
+  ];
+
+  // - Output 1 - ['Hello John', 'Hello Becky', 'Hello Susy', 'Hello Tyson']
+
+  const mapArray = inputThree.map((user) => {
+    let { username } = user;
+    return "Hello" + " " + username;
+  });
+  console.log(mapArray);
+
+  // - Output 2 - [4,5,4,5] -> username length
+  const mapArray2 = inputThree.map((user) => user.username.length);
+  console.log(mapArray2);
+  // - Output 3 - [3,4,3,5] - team length
+  const mapArray5 = inputThree.map((user) => user.team.length);
+  console.log(mapArray5);
+  // - Output 4 - ['Hello John from Red', 'Hello Becky from Blue', 'Hello Susy from Red', 'Hello Tyson from Green']
+  const mapArray3 = inputThree.map((user) => {
+    let { username } = user;
+    let { team } = user;
+    return "Hello" + " " + username + " " + "from" + " " + team;
+  });
+  console.log(mapArray3);
+
+  // - Output 5 - [{ username: "susy", team: "red", score: 55, items: ["ball", "eraser", "pen"]}]
+  const filterArray = inputThree.filter((user) => {
+    return user.team === "red" && user.score == 55;
+  });
+  console.log(filterArray);
+  // - Output 6 - [71] - count of score
+  const total = inputThree.reduce((acc, user) => {
+    return acc + user.score;
+  }, 0);
+  console.log(total);
+</script>
