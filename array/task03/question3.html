@@ -68,4 +68,20 @@
     return acc + user.score;
   }, 0);
   console.log(total);
+  //output:- [{myScore: 5}...]
+  const myScore = inputThree.map((user) => {
+    let { score } = user;
+    return "My Score :" + " " + score;
+  });
+  //console.log(myScore);
+
+  // output;-{totalScore: 71, averageScrore: x}
+  const totalandAvr = inputThree.reduce((acc, user) => {
+    return acc + user.score;
+  }, 0);
+  const averageScrore = inputThree.reduce((acc, user) => {
+    return (acc + user.score) / 4;
+  }, 0);
+  let newObj = { totalandAvr, averageScrore };
+  console.log(newObj);
 </script>
