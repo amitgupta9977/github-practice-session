@@ -73,6 +73,15 @@
     let { score } = user;
     return "My Score :" + " " + score;
   });
+  //Way2:-
+  const myScore2 = inputThree.reduce((acc, curr) => {
+    const elem = {
+      myScore: curr.score,
+    };
+    acc.push(elem);
+    return acc;
+  }, []);
+  console.log("LN84", myScore2);
   //console.log(myScore);
 
   // output;-{totalScore: 71, averageScrore: x}

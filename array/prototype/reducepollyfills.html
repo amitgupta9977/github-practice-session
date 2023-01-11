@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = [1, 2, 4, 6, 7, 45, 34];
+
+    Array.prototype.myReduce = function (cb, initVal) {
+      if (this.length === 0) {
+        throw new TypeError("Reduce of empty array with no initial value");
+      }
+      let preVal = initVal;
+
+      for (let i = preVal ? 0 : 1; i < this.length; i++) {
+        preVal = cb(preVal ? preVal : this[0], this[i], i, this);
+      }
+      return preVal;
+    };
+    console.log(
+      arr.myReduce((a, b) => {
+        return a + b;
+      })
+    );
+  </script>
+</html>
