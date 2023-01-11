@@ -85,12 +85,18 @@
   //console.log(myScore);
 
   // output;-{totalScore: 71, averageScrore: x}
-  const totalandAvr = inputThree.reduce((acc, user) => {
-    return acc + user.score;
-  }, 0);
-  const averageScrore = inputThree.reduce((acc, user) => {
-    return (acc + user.score) / 4;
-  }, 0);
-  let newObj = { totalandAvr, averageScrore };
-  console.log(newObj);
+  const sumAverage = inputThree.reduce(
+    (acc, curr, index) => {
+      const sum = acc.totalScore + curr.score;
+      const avg = sum / (index + 1);
+
+      acc.totalScore = sum;
+      acc.avgScore = avg;
+
+      return acc;
+    },
+    { totalScore: 0, avgScore: 0 }
+  );
+
+  console.log({ sumAverage });
 </script>

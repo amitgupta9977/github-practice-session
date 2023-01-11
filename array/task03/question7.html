@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   let arr = [];
+  //   const initarray = (id, name) => {
+  //     let initCart = {
+  //       fval: id,
+  //       secval: name,
+  //     };
+  //     arr.push(initCart);
+  //     return console.log(arr);
+  //   };
+  //   const myBasket = initarray();
+  //   myBasket({ id: 1, name: "dabar hair oil" });
+  //   myBasket({ id: 2, name: "AMit Gupta" });
+  let arr = [];
+  const myBasket = (no, product) => {
+    function inner() {
+      let obj = {
+        id: no,
+        name: product,
+      };
+      arr.push(obj);
+    }
+    inner();
+  };
+  myBasket({ 10, "milk rush" });
+  myBasket({ no: 11, product: "Volf rush" });
+
+  //myBasket(1, "dabar hair oil");
+  console.log("Ok", arr);
+  //console.log(initcart2());
+  //console.log(initcart2());
+</script>
