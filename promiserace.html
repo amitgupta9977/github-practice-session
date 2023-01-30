@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const getDetails = () =>
+    new Promise((reply, reject) => {
+      reject({
+        name: "Amit",
+        city: "Jabalpur",
+      });
+    });
+
+  const getName = () =>
+    new Promise((reply, reject) => {
+      reply("Amit");
+    });
+
+  const getCity = () =>
+    new Promise((reply, reject) => {
+      reply("Jabalpur");
+    });
+
+  // Promise.all using async & await
+
+  const calldeatilsV2 = async () => {
+    const result = await Promise.race([
+      getDetails(),
+      getCity(),
+      getName(),
+    ]).catch((err) => err);
+    console.log("@AG LN No 72", result);
+  };
+
+  calldeatilsV2();
+</script>
