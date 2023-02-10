@@ -5,12 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .heading {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      #cards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .card {
+        width: 23%;
+        box-shadow: 0 0 4px 3px black;
+        text-align: center;
+        padding: 1.5em;
+        margin-bottom: 2em;
+      }
+      .images {
+        width: 80%;
+      }
+      .title {
+        font-size: 1.3rem;
+      }
+      .category,
+      .price {
+        font-weight: bold;
+        text-transform: capitalize;
+        margin: 1em;
+        font-size: 1.5rem;
+      }
+    </style>
   </head>
   <body>
-    <input type="text" placeholder="enter here" id="inputId" />
     <div id="cards"></div>
-
-    <script src="script.js"></script>
   </body>
 </html>
+
+<script>
+  fetch("https://fakestoreapi.com/products")
+    .then((data) => {
+      return data.json();
+    })
+    .then((completeData) => {
+      let data1 = "";
+      completeData.map((values) => {
+        data1 = `<div class= "card">
+        <h1 class="title"> ${values.title}</h1>
+        <img src=${values.image} alt="img" class="images">
+        <p>${values.description}</p>
+        <p class="category">${values.category}</p>
+        <p class="price">${values.price}</p>`;
+      });
+      document.getElementById("cards").innerHTML = data1;
+    });
+</script>
