@@ -4,11 +4,11 @@ function hasNetwork(online) {
   if (online) {
     element.classList.remove("offline");
     element.classList.add("online");
-    element.innerText = "Online";
+    element.innerText = "Wifi";
   } else {
     element.classList.remove("online");
     element.classList.add("offline");
-    element.innerText = "Offline";
+    element.innerText = "No -Wifi";
   }
 }
 
